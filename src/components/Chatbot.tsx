@@ -27,7 +27,9 @@ const Chatbot = () => {
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
-      const scrollContainer = scrollAreaRef.current.querySelector('[data-radix-scroll-area-viewport]');
+      const scrollContainer = scrollAreaRef.current.querySelector(
+        '[data-radix-scroll-area-viewport]'
+      );
       if (scrollContainer) {
         scrollContainer.scrollTop = scrollContainer.scrollHeight;
       }
@@ -38,30 +40,21 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  const getBotResponse = (userMessage: string): string => {
-    const lowerMessage = userMessage.toLowerCase();
-    
-    if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
-      return 'Hello! Welcome to Cre8Circle. I\'m here to help you with any questions about our creative collaboration platform.';
+  // 🔥 New: Fetch bot response from backend
+  const fetchBotResponse = async (userMessage: string): Promise<string> => {
+    try {
+      const res = await fetch("http://localhost:5000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
+      });
+
+      const data = await res.json();
+      return data.answer || "⚠️ Sorry, I couldn’t understand that.";
+    } catch (error) {
+      console.error("Chatbot error:", error);
+      return "⚠️ Sorry, something went wrong. Please try again.";
     }
-    
-    if (lowerMessage.includes('what') && lowerMessage.includes('cre8circle')) {
-      return 'Cre8Circle is a revolutionary platform that brings creators together in perfect harmony. We facilitate collaboration, creativity, and community building for artists, designers, and innovators.';
-    }
-    
-    if (lowerMessage.includes('download') || lowerMessage.includes('get')) {
-      return 'You can download Cre8Circle from our Download page! Just click on the Download link in the navigation menu to get started.';
-    }
-    
-    if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
-      return 'I\'m here to help! You can ask me about Cre8Circle features, how to get started, or visit our About page for more information.';
-    }
-    
-    if (lowerMessage.includes('price') || lowerMessage.includes('cost')) {
-      return 'Great question! For detailed pricing information, please visit our Download page or contact our team for a personalized quote.';
-    }
-    
-    return 'Thanks for your message! I\'m still learning, but I\'d be happy to help you explore Cre8Circle. You can also check out our About page for more detailed information.';
   };
 
   const handleSendMessage = async () => {
@@ -74,22 +67,22 @@ const Chatbot = () => {
       timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     setInputText('');
     setIsTyping(true);
 
-    // Simulate bot typing delay
-    setTimeout(() => {
-      const botResponse: Message = {
-        id: (Date.now() + 1).toString(),
-        text: getBotResponse(inputText),
-        isUser: false,
-        timestamp: new Date(),
-      };
+    // Ask backend
+    const botReply = await fetchBotResponse(userMessage.text);
 
-      setMessages(prev => [...prev, botResponse]);
-      setIsTyping(false);
-    }, 1000 + Math.random() * 1000);
+    const botResponse: Message = {
+      id: (Date.now() + 1).toString(),
+      text: botReply,
+      isUser: false,
+      timestamp: new Date(),
+    };
+
+    setMessages((prev) => [...prev, botResponse]);
+    setIsTyping(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

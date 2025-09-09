@@ -104,7 +104,7 @@ const About = () => {
                 className="w-32 h-32 rounded-full object-cover shadow-md"
               />
               <h3 className="mt-4 text-lg font-semibold">Hirin Jain</h3>
-              <p className="text-sm text-muted-foreground">Founder & CEO</p>
+              <p className="text-sm text-muted-foreground">member</p>
             </div>
 
             {/* Team Member 2 */}
@@ -114,8 +114,8 @@ const About = () => {
                 alt="Member 2"
                 className="w-32 h-32 rounded-full object-cover shadow-md"
               />
-              <h3 className="mt-4 text-lg font-semibold">John Doe</h3>
-              <p className="text-sm text-muted-foreground">CTO</p>
+              <h3 className="mt-4 text-lg font-semibold">Kirtan Shah</h3>
+              <p className="text-sm text-muted-foreground">member</p>
             </div>
 
             {/* Team Member 3 */}
@@ -125,8 +125,8 @@ const About = () => {
                 alt="Member 3"
                 className="w-32 h-32 rounded-full object-cover shadow-md"
               />
-              <h3 className="mt-4 text-lg font-semibold">Jane Smith</h3>
-              <p className="text-sm text-muted-foreground">Product Head</p>
+              <h3 className="mt-4 text-lg font-semibold">Param Megha</h3>
+              <p className="text-sm text-muted-foreground">member</p>
             </div>
 
             {/* Team Member 4 */}
@@ -136,8 +136,8 @@ const About = () => {
                 alt="Member 4"
                 className="w-32 h-32 rounded-full object-cover shadow-md"
               />
-              <h3 className="mt-4 text-lg font-semibold">Alex Brown</h3>
-              <p className="text-sm text-muted-foreground">Design Lead</p>
+              <h3 className="mt-4 text-lg font-semibold">Nairit Medhi</h3>
+              <p className="text-sm text-muted-foreground">member</p>
             </div>
           </div>
         </div>
