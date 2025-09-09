@@ -2,16 +2,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "@/context/AuthContext";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Download", href: "/download" },
     { name: "How to Use", href: "/how-to-use" },
-    { name: "Login", href: "/login" },
   ];
 
   return (
@@ -28,7 +29,7 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.slice(0, -1).map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
@@ -40,13 +41,26 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Login Button */}
+          {/* Auth Buttons */}
           <div className="hidden md:block">
-            <Link to="/login">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Login
+            {user ? (
+              <Button
+                variant="outline"
+                className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+                onClick={logout}
+              >
+                Logout
               </Button>
-            </Link>
+            ) : (
+              <Link to="/login">
+                <Button
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                >
+                  Login
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -75,6 +89,27 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+              {user ? (
+                <Button
+                  variant="outline"
+                  className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white mt-2"
+                  onClick={() => {
+                    logout();
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Logout
+                </Button>
+              ) : (
+                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground mt-2"
+                  >
+                    Login
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         )}

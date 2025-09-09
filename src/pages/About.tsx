@@ -25,13 +25,12 @@ const About = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-muted-foreground text-lg mb-6">
-                At Cre8Circle, we believe that the best ideas emerge when creative minds come together. 
-                Our platform breaks down barriers and connects creators, innovators, and visionaries from 
-                around the world in seamless collaborative experiences.
-              </p>
+              At Cre8Circle, we believe true peace of mind comes when the people you love are connected, safe, and cared for. Our platform helps families and friends stay closer by sharing live locations, medical updates, and timely reminders.
+
+
               <p className="text-muted-foreground text-lg">
-                We're not just building an app – we're fostering a global community where creativity 
-                knows no bounds and collaboration drives innovation.
+                We’re not just creating an app — we’re fostering a digital circle of care, where health, safety, and connection come together to build stronger bonds.
+              </p>
               </p>
             </div>
             <div className="relative">
@@ -49,7 +48,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Community First</h3>
               <p className="text-muted-foreground">
-                We prioritize building meaningful connections and fostering a supportive creative community.
+                We prioritize families and friendships, enabling meaningful connections that go beyond simple messaging.
               </p>
             </div>
 
@@ -57,9 +56,9 @@ const About = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-subtle flex items-center justify-center">
                 <Rocket className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Innovation</h3>
+              <h3 className="text-xl font-semibold mb-3">Innovation in Care</h3>
               <p className="text-muted-foreground">
-                We constantly push boundaries to create cutting-edge tools that empower creators.
+                From live GPS sharing to health reports and medicine reminders, we use technology to simplify care and support.
               </p>
             </div>
 
@@ -67,9 +66,9 @@ const About = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-subtle flex items-center justify-center">
                 <Heart className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Passion</h3>
+              <h3 className="text-xl font-semibold mb-3">Built with Love</h3>
               <p className="text-muted-foreground">
-                Every feature is built with love and dedication to serving our creative community.
+                Every feature is designed with compassion — helping families protect, monitor, and support each other every day.
               </p>
             </div>
           </div>
@@ -81,15 +80,65 @@ const About = () => {
         <div className="container mx-auto text-center max-w-4xl">
           <h2 className="text-4xl font-bold mb-6">Built by Creators, for Creators</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Our diverse team of designers, developers, and creators understands the challenges 
-            of modern collaboration because we live them every day.
+            Our team understands the challenges of keeping loved ones safe and connected. That’s why Cre8Circle is designed to bring technology and care together in the simplest way possible.
           </p>
           <div className="bg-gradient-subtle p-8 rounded-lg">
             <p className="text-lg font-medium">
-              "We're not just building software – we're crafting experiences that inspire, 
-              connect, and amplify human creativity."
+              "We’re not just building software — we’re creating peace of mind, making care easier, and ensuring no loved one is ever out of reach."
             </p>
             <p className="text-primary mt-4 font-semibold">— The Cre8Circle Team</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Team Section */}
+      <section className="bg-background py-12 mt-12 border-t border-border">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-10">Our Core Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {/* Team Member 1 */}
+            <div className="flex flex-col items-center">
+              <img
+                src="/team/member1.jpg" // put your image inside public/team/
+                alt="Member 1"
+                className="w-32 h-32 rounded-full object-cover shadow-md"
+              />
+              <h3 className="mt-4 text-lg font-semibold">Hirin Jain</h3>
+              <p className="text-sm text-muted-foreground">Founder & CEO</p>
+            </div>
+
+            {/* Team Member 2 */}
+            <div className="flex flex-col items-center">
+              <img
+                src="/team/member2.jpg"
+                alt="Member 2"
+                className="w-32 h-32 rounded-full object-cover shadow-md"
+              />
+              <h3 className="mt-4 text-lg font-semibold">John Doe</h3>
+              <p className="text-sm text-muted-foreground">CTO</p>
+            </div>
+
+            {/* Team Member 3 */}
+            <div className="flex flex-col items-center">
+              <img
+                src="/team/member3.jpg"
+                alt="Member 3"
+                className="w-32 h-32 rounded-full object-cover shadow-md"
+              />
+              <h3 className="mt-4 text-lg font-semibold">Jane Smith</h3>
+              <p className="text-sm text-muted-foreground">Product Head</p>
+            </div>
+
+            {/* Team Member 4 */}
+            <div className="flex flex-col items-center">
+              <img
+                src="/team/member4.jpg"
+                alt="Member 4"
+                className="w-32 h-32 rounded-full object-cover shadow-md"
+              />
+              <h3 className="mt-4 text-lg font-semibold">Alex Brown</h3>
+              <p className="text-sm text-muted-foreground">Design Lead</p>
+            </div>
           </div>
         </div>
       </section>

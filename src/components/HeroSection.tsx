@@ -20,7 +20,7 @@ const HeroSection = () => {
           
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Where creativity meets collaboration. Join the circle of creators, innovators, and visionaries shaping the future.
+            Where care meets connection. Build a private circle with your family and friends. Stay connected, safe, and informed—always.
           </p>
           
           {/* CTA Buttons */}
@@ -48,24 +48,24 @@ const HeroSection = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-subtle flex items-center justify-center">
                 <Users className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Collaborative</h3>
-              <p className="text-muted-foreground">Connect with creators worldwide and build together</p>
+              <h3 className="text-lg font-semibold mb-2">Communities</h3>
+              <p className="text-muted-foreground">Create circles for family, friends, or groups. Stay updated with their well-being in one safe space.</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-subtle flex items-center justify-center">
                 <Palette className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Creative Tools</h3>
-              <p className="text-muted-foreground">Advanced tools to bring your vision to life</p>
+              <h3 className="text-lg font-semibold mb-2">Live Location Sharing</h3>
+              <p className="text-muted-foreground">Always know where your loved ones are. Stay reassured with real-time location updates.</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-subtle flex items-center justify-center">
                 <Zap className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Lightning Fast</h3>
-              <p className="text-muted-foreground">Real-time collaboration with zero lag</p>
+              <h3 className="text-lg font-semibold mb-2">Medicine Reminders</h3>
+              <p className="text-muted-foreground">Never miss a dose again. Set personalized medication reminders for yourself or your loved ones.</p>
             </div>
           </div>
         </div>

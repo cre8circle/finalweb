@@ -1,130 +1,80 @@
-import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
-import { Download as DownloadIcon, Apple, Smartphone, Monitor, Check } from "lucide-react";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
+import Navigation from "@/components/Navigation";
 
 const Download = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black text-white">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      <section className="text-center py-16 mt-16">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Download <span className="bg-gradient-primary bg-clip-text text-transparent">Cre8Circle</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-12">
-            Get started with Cre8Circle on your favorite platform and join the creative revolution.
-          </p>
+        <p className="text-gray-400 mb-12">
+          Get started with Cre8Circle on your favorite mobile platform and join the creative revolution.
+        </p>
+
+        {/* Mobile Options: iOS & Android */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* iOS Card */}
+          <div className="bg-neutral-900 p-8 rounded-2xl shadow-lg text-center">
+            <div className="flex justify-center mb-4 text-5xl text-white">
+              <FaApple />
+            </div>
+            <h2 className="text-2xl font-semibold mb-3">iOS App</h2>
+            <p className="text-gray-400 mb-8">
+              Download Cre8Circle for iPhone and iPad from the App Store.
+            </p>
+            <Button className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white w-full text-lg py-6">
+              <FaApple size={24} /> Download for iOS
+            </Button>
+          </div>
+
+          {/* Android Card */}
+          <div className="bg-neutral-900 p-8 rounded-2xl shadow-lg text-center">
+            <div className="flex justify-center mb-4 text-5xl text-green-500">
+              <FaGooglePlay />
+            </div>
+            <h2 className="text-2xl font-semibold mb-3">Android App</h2>
+            <p className="text-gray-400 mb-8">
+              Get Cre8Circle for Android devices on the Google Play Store.
+            </p>
+            <Button className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white w-full text-lg py-6">
+              <FaGooglePlay size={24} /> Download for Android
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Download Options */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {/* Mobile App */}
-            <div className="text-center p-8 rounded-lg bg-card border border-border hover:border-primary transition-colors">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-subtle flex items-center justify-center">
-                <Smartphone className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Mobile App</h3>
-              <p className="text-muted-foreground mb-6">
-                Create and collaborate on the go with our full-featured mobile experience.
-              </p>
-              <div className="space-y-3">
-                <Button className="w-full bg-gradient-primary text-primary-foreground hover:shadow-glow">
-                  <Apple className="mr-2 h-5 w-5" />
-                  Download for iOS
-                </Button>
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  <DownloadIcon className="mr-2 h-5 w-5" />
-                  Download for Android
-                </Button>
-              </div>
-            </div>
-
-            {/* Desktop App */}
-            <div className="text-center p-8 rounded-lg bg-card border border-border hover:border-primary transition-colors">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-subtle flex items-center justify-center">
-                <Monitor className="h-10 w-10 text-accent" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Desktop App</h3>
-              <p className="text-muted-foreground mb-6">
-                Powerful desktop tools for professional creators who demand the best.
-              </p>
-              <div className="space-y-3">
-                <Button className="w-full bg-gradient-primary text-primary-foreground hover:shadow-glow">
-                  <DownloadIcon className="mr-2 h-5 w-5" />
-                  Download for Mac
-                </Button>
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  <DownloadIcon className="mr-2 h-5 w-5" />
-                  Download for Windows
-                </Button>
-              </div>
-            </div>
-
-            {/* Web App */}
-            <div className="text-center p-8 rounded-lg bg-card border border-border hover:border-primary transition-colors">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-subtle flex items-center justify-center">
-                <Monitor className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Web App</h3>
-              <p className="text-muted-foreground mb-6">
-                Access Cre8Circle from any browser - no download required.
-              </p>
-              <Button className="w-full bg-gradient-primary text-primary-foreground hover:shadow-glow">
-                Launch Web App
-              </Button>
-            </div>
-          </div>
-
-          {/* Features List */}
-          <div className="bg-secondary/20 rounded-lg p-8">
-            <h3 className="text-2xl font-semibold text-center mb-8">What's Included</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                "Real-time collaboration tools",
-                "Advanced creative suite",
-                "Cloud sync across devices",
-                "Community features",
-                "Project management tools",
-                "Export in multiple formats"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <Check className="h-5 w-5 text-primary" />
-                  <span className="text-foreground">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* What's Included */}
+      <section className="bg-neutral-950 py-12">
+        <h2 className="text-center text-2xl font-semibold mb-8">What's Included</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-gray-300">
+          <p>✔ Real-time collaboration tools</p>
+          <p>✔ Cloud sync across devices</p>
+          <p>✔ Project management tools</p>
+          <p>✔ Advanced creative suite</p>
+          <p>✔ Community features</p>
+          <p>✔ Export in multiple formats</p>
         </div>
       </section>
 
       {/* System Requirements */}
-      <section className="py-16 px-4 bg-secondary/10">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-8">System Requirements</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="text-left">
-              <h3 className="text-xl font-semibold mb-4">Minimum Requirements</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• 4GB RAM</li>
-                <li>• 2GB storage space</li>
-                <li>• Internet connection</li>
-                <li>• Modern web browser</li>
-              </ul>
-            </div>
-            <div className="text-left">
-              <h3 className="text-xl font-semibold mb-4">Recommended</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• 8GB+ RAM</li>
-                <li>• 5GB+ storage space</li>
-                <li>• High-speed internet</li>
-                <li>• Dedicated graphics card</li>
-              </ul>
-            </div>
+      <section className="py-12 text-center">
+        <h2 className="text-2xl font-semibold mb-6">System Requirements</h2>
+        <div className="flex flex-col md:flex-row justify-center gap-12 text-gray-400">
+          <div>
+            <h3 className="font-bold mb-2">Minimum Requirements</h3>
+            <p>2GB+ storage space</p>
+            <p>Internet connection</p>
+            <p>Modern smartphone</p>
+          </div>
+          <div>
+            <h3 className="font-bold mb-2">Recommended</h3>
+            <p>4GB+ RAM</p>
+            <p>5GB+ storage space</p>
+            <p>High-speed internet</p>
+            <p>Latest Android/iOS version</p>
           </div>
         </div>
       </section>

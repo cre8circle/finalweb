@@ -9,6 +9,8 @@ import Download from "./pages/Download";
 import Login from "./pages/Login";
 import HowToUse from "./pages/HowToUse";
 import NotFound from "./pages/NotFound";
+import { AuthProvider } from "@/context/AuthContext";
+// import Dashboard from "./pages/Dashboard"; // ✅ new page
 
 const queryClient = new QueryClient();
 
@@ -17,6 +19,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -24,12 +27,16 @@ const App = () => (
           <Route path="/download" element={<Download />} />
           <Route path="/how-to-use" element={<HowToUse />} />
           <Route path="/login" element={<Login />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> ✅ Added */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    </AuthProvider>
+  </TooltipProvider>
+</QueryClientProvider>
 );
 
 export default App;
+
